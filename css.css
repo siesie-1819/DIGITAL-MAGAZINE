@@ -13,8 +13,6 @@ body{
     scroll-behavior:smooth;
 }
 
-
-
 header{
     display:flex;
     justify-content:space-between;
@@ -32,6 +30,7 @@ header{
     font-size:24px;
     font-weight:700;
     color:#7c5a4f;
+    letter-spacing:1px;
 }
 
 .menu-toggle{
@@ -43,9 +42,8 @@ header{
 
 .menu-toggle:hover{
     color:#c89f94;
+    transform:scale(1.1);
 }
-
-
 
 .sidebar{
     position:fixed;
@@ -58,6 +56,7 @@ header{
     box-shadow:4px 0 20px rgba(0,0,0,0.08);
     transition:0.4s ease;
     z-index:999;
+    border-right:1px solid rgba(200,159,148,0.2);
 }
 
 .sidebar a{
@@ -69,11 +68,27 @@ header{
     border-radius:30px;
     margin:10px 20px;
     transition:0.3s;
+    position:relative;
 }
 
 .sidebar a:hover{
     background:#f6ede5;
     padding-left:35px;
+}
+
+.sidebar a::after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:20px;
+    width:0%;
+    height:2px;
+    background:#c89f94;
+    transition:0.3s;
+}
+
+.sidebar a:hover::after{
+    width:60%;
 }
 
 .sidebar a.active{
@@ -85,8 +100,6 @@ header{
     left:0;
 }
 
-
-
 .container{
     max-width:1100px;
     margin:60px auto;
@@ -94,14 +107,31 @@ header{
     background:white;
     border-radius:25px;
     box-shadow:0 15px 40px rgba(0,0,0,0.07);
+    transition:0.4s;
 }
 
+.container:hover{
+    box-shadow:0 20px 50px rgba(124,90,79,0.12);
+}
 
 .cover{
     text-align:center;
-    padding:50px 30px;
+    padding:60px 30px;
     background:linear-gradient(to right,#f9f1eb,#f4e3db);
     border-radius:20px;
+    position:relative;
+    overflow:hidden;
+}
+
+.cover::before{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:radial-gradient(circle, rgba(200,159,148,0.25), transparent 70%);
+    top:-100px;
+    right:-100px;
+    border-radius:50%;
 }
 
 .cover h1{
@@ -109,6 +139,8 @@ header{
     font-size:42px;
     color:#7c5a4f;
     margin-bottom:15px;
+    letter-spacing:2px;
+    text-transform:uppercase;
 }
 
 .tagline{
@@ -133,8 +165,6 @@ header{
     box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
-
-
 h2{
     font-family:'Playfair Display', serif;
     font-size:28px;
@@ -147,12 +177,31 @@ h3{
     color:#8b6a60;
 }
 
+.section-title{
+    display:inline-block;
+    position:relative;
+}
 
+.section-title::after{
+    content:"✿";
+    margin-left:10px;
+    color:#c89f94;
+    font-size:18px;
+}
+
+.divider{
+    width:60px;
+    height:3px;
+    background:#c89f94;
+    margin:20px 0 30px 0;
+    border-radius:10px;
+}
 
 p{
     line-height:1.9;
     margin-bottom:15px;
     text-align:justify;
+    color:#4a3a35;
 }
 
 .intro::first-letter{
@@ -171,6 +220,29 @@ p{
     font-weight:600;
 }
 
+.image-frame{
+    padding:8px;
+    background:#f4e3db;
+    border-radius:25px;
+    position:relative;
+    overflow:hidden;
+}
+
+.image-frame::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(to top, rgba(0,0,0,0.15), transparent);
+    opacity:0;
+    transition:0.4s;
+}
+
+.image-frame:hover::after{
+    opacity:1;
+}
 
 img{
     width:100%;
@@ -183,14 +255,6 @@ img:hover{
     transform:scale(1.02);
     box-shadow:0 12px 30px rgba(0,0,0,0.1);
 }
-
-.image-frame{
-    padding:8px;
-    background:#f4e3db;
-    border-radius:25px;
-}
-
-
 
 .video-container{
     margin:30px 0;
@@ -205,8 +269,6 @@ iframe{
     border:none;
 }
 
-
-
 ul, ol{
     margin:20px 0 20px 25px;
 }
@@ -215,25 +277,11 @@ li{
     margin-bottom:10px;
 }
 
-
-
-.btn{
-    display:inline-block;
-    padding:12px 25px;
-    background:#7c5a4f;
-    color:white;
-    border-radius:30px;
-    text-decoration:none;
-    transition:0.3s;
-    box-shadow:0 8px 20px rgba(124,90,79,0.2);
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
 }
-
-.btn:hover{
-    background:#c89f94;
-    box-shadow:0 10px 25px rgba(200,159,148,0.4);
-}
-
-
 
 .card{
     background:white;
@@ -241,14 +289,14 @@ li{
     border-radius:20px;
     box-shadow:0 10px 25px rgba(0,0,0,0.06);
     transition:0.3s;
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(200,159,148,0.15);
 }
 
 .card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 15px 35px rgba(0,0,0,0.08);
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(124,90,79,0.15);
 }
-
-
 
 .quote{
     background:#f9f1eb;
@@ -260,63 +308,38 @@ li{
     box-shadow:0 8px 20px rgba(0,0,0,0.05);
 }
 
-
-
-.divider{
-    width:60px;
-    height:3px;
-    background:#c89f94;
-    margin:20px 0 30px 0;
-    border-radius:10px;
-}
-
-
-
-.section-title{
+.btn{
     display:inline-block;
-    position:relative;
-}
-
-.section-title::after{
-    content:"✿";
-    margin-left:10px;
-    color:#c89f94;
-    font-size:18px;
-}
-
-
-
-.fancy-link{
-    position:relative;
+    padding:12px 25px;
+    background:#7c5a4f;
+    color:white;
+    border-radius:30px;
     text-decoration:none;
-    color:#7c5a4f;
-    font-weight:500;
+    transition:0.3s;
+    box-shadow:0 8px 20px rgba(124,90,79,0.2);
+    position:relative;
+    overflow:hidden;
 }
 
-.fancy-link::after{
+.btn:hover{
+    background:#c89f94;
+    box-shadow:0 10px 25px rgba(200,159,148,0.4);
+}
+
+.btn::after{
     content:"";
     position:absolute;
-    left:0;
-    bottom:-4px;
-    width:0%;
-    height:2px;
-    background:#c89f94;
-    transition:0.3s;
+    width:120%;
+    height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    top:0;
+    left:-120%;
+    transition:0.6s;
 }
 
-.fancy-link:hover::after{
-    width:100%;
+.btn:hover::after{
+    left:120%;
 }
-
-
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-
 
 footer{
     text-align:center;
@@ -326,8 +349,6 @@ footer{
     color:#8b6a60;
     font-size:14px;
 }
-
-
 
 ::-webkit-scrollbar{
     width:8px;
@@ -342,7 +363,10 @@ footer{
     border-radius:10px;
 }
 
-
+::selection{
+    background:#e8d5cc;
+    color:#2d2d2d;
+}
 
 .fade-in{
     opacity:0;
@@ -356,7 +380,6 @@ footer{
         transform:translateY(0);
     }
 }
-
 
 @media(max-width:768px){
 
@@ -372,4 +395,4 @@ footer{
     .cover h1{
         font-size:30px;
     }
-    }
+}
