@@ -343,3 +343,43 @@ transition:0.6s;
 .btn:hover::after{
 left:100%;
 }
+#article1,
+#article2,
+#article3,
+#article4,
+#article5,
+#article6 {
+    display: none;
+    padding: 60px 10%;
+    background: #ffffff;
+}
+
+
+#article1:target,
+#article2:target,
+#article3:target,
+#article4:target,
+#article5:target,
+#article6:target {
+    display: block;
+}
+
+
+#article1,
+#article2,
+#article3,
+#article4,
+#article5,
+#article6 {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#article1:target,
+#article2:target,
+#article3:target,
+#article4:target,
+#article5:target,
+#article6:target {
+    opacity: 1;
+}
