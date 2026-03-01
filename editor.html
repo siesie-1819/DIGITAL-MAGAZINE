@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InSIEght Journal | Home</title>
+<link rel="stylesheet" href="https://siesie-1819.github.io/DIGITAL-MAGAZINE/css.css">
+
+<style>
+.quote-section{
+    text-align:center;
+}
+.quote-box{
+    position:relative;
+    padding:50px 40px;
+    background:#f8f1e7;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(139,94,60,0.2);
+}
+.quote-box::before{
+    content:"“";
+    position:absolute;
+    top:-20px;
+    left:25px;
+    font-size:120px;
+    font-family:'Playfair Display', serif;
+    color:#e0cfc2;
+}
+.quote-text{
+    font-family:'Playfair Display', serif;
+    font-size:28px;
+    font-style:italic;
+    color:#8b5e3c;
+    line-height:1.6;
+}
+.quote-author{
+    margin-top:20px;
+    font-weight:600;
+    letter-spacing:1px;
+    color:#a67b5b;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="top-brand">
+    <div class="logo">In<span>SIE</span>ght Journal</div>
+    <div class="brand-menu" onclick="toggleMenu()">☰</div>
+</div>
+
+<nav>
+    <a href="#" class="active">Home</a>
+    <a href="#">Editor's Note</a>
+    <a href="#">Articles</a>
+    <a href="#">Updates</a>
+</nav>
+
+<div class="main-content">
+
+<header class="home-header">
+    <div class="header-overlay">
+        <div class="header-text">
+            <h1>Bridging the Digital Divide</h1>
+            <p>
+                In<span class="highlight">SIE</span>ght Journal explores how 
+                digital inequality affects education, employment, and opportunity worldwide.
+            </p>
+            <a href="#learn" class="btn">Learn More</a>
+        </div>
+    </div>
+</header>
+
+<section id="learn">
+
+<h2>What is the Digital Divide?</h2>
+
+<p style="text-align:justify;">
+<span style="
+float:left;
+font-size:60px;
+line-height:1;
+padding-right:10px;
+font-family:'Playfair Display', serif;
+color:#8b5e3c;
+">T</span>
+he <span class="highlight">Digital Divide</span> refers to the gap between 
+those who have access to modern technology and those who do not. 
+It includes access to internet connectivity, digital devices, and 
+the skills required to use them effectively.
+</p>
+
+<p style="text-align:justify;">
+In today's digital age, access to technology determines academic success, 
+economic mobility, and social participation. Without equal access, 
+inequality continues to widen across communities.
+</p>
+
+</section>
+
+<section>
+
+<h2>Understanding the Issue Through Video</h2>
+
+<div class="card">
+
+<p style="margin-bottom:20px; text-align:justify;">
+The video below gives a clearer understanding of how digital inequality 
+impacts students, rural communities, and developing regions. 
+It explains why bridging this divide is essential for inclusive growth.
+</p>
+
+<video controls autoplay muted loop playsinline width="100%" style="border-radius:15px;">
+<source src="https://siesie-1819.github.io/DIGITAL-MAGAZINE/Screen%20Recording%202026-03-01%20224946.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Why It Matters</h2>
+
+<div class="magazine-grid">
+
+<div class="image-card">
+<img src="https://images.unsplash.com/photo-1588072432836-e10032774350" alt="">
+<div class="overlay">
+<h3>Education Inequality</h3>
+<p>Students without stable internet struggle to compete academically.</p>
+</div>
+</div>
+
+<div class="image-card">
+<img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644" alt="">
+<div class="overlay">
+<h3>Economic Barriers</h3>
+<p>Limited digital skills reduce employment opportunities.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="quote-section">
+
+<div class="quote-box">
+
+<p class="quote-text">
+Technology should be a bridge to opportunity — 
+not a barrier that divides society.
+</p>
+
+<p class="quote-author">
+— In<span class="highlight">SIE</span>ght Journal
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>My Commitment</h2>
+
+<p style="text-align:justify;">
+<span style="
+float:left;
+font-size:60px;
+line-height:1;
+padding-right:10px;
+font-family:'Playfair Display', serif;
+color:#8b5e3c;
+">A</span>
+t In<span class="highlight">SIE</span>ght Journal, I promote 
+<span class="highlight">Digital Equality</span> through awareness, research, 
+and storytelling. My mission is to ensure that technology becomes 
+a shared opportunity for everyone  not a privilege for a few.
+</p>
+
+</section>
+
+<footer>
+© 2026 InSIEght Journal | All Rights Reserved
+</footer>
+
+</div>
+
+<script>
+function toggleMenu(){
+document.querySelector("nav").classList.toggle("active");
+document.querySelector(".main-content").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
