@@ -75,10 +75,20 @@ box-shadow:0 0 30px rgba(139,94,60,0.4);
 z-index:999;
 }
 
-nav.active{
-left:0;
+nav a.active{
+    background:#f1e3d3;
+    border-left:5px solid #8b5e3c;
+    padding-left:35px;
+    color:#5c4033;
+    font-weight:700;
 }
 
+nav a.active::after{
+    content:"●";
+    float:right;
+    color:#8b5e3c;
+    font-size:14px;
+}
 nav a{
 display:block;
 padding:15px 25px;
@@ -128,7 +138,21 @@ font-family:'Playfair Display', serif;
 margin-bottom:15px;
 text-shadow:0 0 25px rgba(0,0,0,0.6);
 }
+.header-text{
+    background:rgba(0,0,0,0.55);
+    padding:30px 50px;
+    border-radius:20px;
+    backdrop-filter:blur(5px);
+    display:inline-block;
+}
 
+.header-text h1{
+    color:#ffffff;
+}
+
+.header-text p{
+    color:#f3e5d8;
+}
 .header-text p{
 font-size:20px;
 margin-bottom:25px;
@@ -247,13 +271,6 @@ text-shadow:0 0 10px rgba(139,94,60,0.5);
 }
 
 
-.magazine-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
-    gap:25px;
-    margin-top:30px;
-}
-
 .image-card{
     position:relative;
     overflow:hidden;
@@ -274,13 +291,14 @@ text-shadow:0 0 10px rgba(139,94,60,0.5);
     left:0;
     width:100%;
     height:100%;
-    background:linear-gradient(to top, rgba(0,0,0,0.8, transparent);
+    background:linear-gradient(to top, rgba(0,0,0,0.😎, rgba(0,0,0,0));
     display:flex;
     flex-direction:column;
     justify-content:flex-end;
     padding:30px;
     opacity:0;
-    transition:0.4s;
+    transform:translateY(20px);
+    transition:0.4s ease;
 }
 
 .overlay h3,
@@ -294,9 +312,7 @@ text-shadow:0 0 10px rgba(139,94,60,0.5);
 
 .image-card:hover .overlay{
     opacity:1;
-}
-.image-card:hover .overlay{
-transform:translateY(0);
+    transform:translateY(0);
 }
 #editor {
     padding: 60px 15%;
