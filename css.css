@@ -1,8 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap');
-.cover-container{
-    max-width:1000px;
-    margin:auto;
-}
 
 *{
     margin:0;
@@ -43,6 +39,7 @@ body{
     box-shadow:8px 0 30px rgba(79,140,255,0.15);
     display:flex;
     flex-direction:column;
+    z-index:1000;
 }
 
 .sidebar .logo{
@@ -81,8 +78,6 @@ body{
     color:white;
     box-shadow:0 0 25px rgba(79,140,255,0.7);
 }
-
-
 
 .main-content{
     margin-left:260px;
@@ -137,7 +132,6 @@ body{
     box-shadow:0 0 40px rgba(79,140,255,0.9);
 }
 
-
 .section-title{
     text-align:center;
     margin-bottom:70px;
@@ -154,9 +148,6 @@ body{
     margin-top:12px;
     color:#5a6f99;
 }
-
-
-
 
 p{
     line-height:2;
@@ -184,9 +175,6 @@ p{
     box-shadow:0 0 18px rgba(79,140,255,0.6);
 }
 
-
-
-
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -206,8 +194,6 @@ p{
     box-shadow:0 0 40px rgba(79,140,255,0.5);
 }
 
-
-
 .image-frame{
     padding:14px;
     border-radius:30px;
@@ -225,9 +211,6 @@ img:hover{
     box-shadow:0 0 35px rgba(79,140,255,0.7);
 }
 
-
-
-
 .video-container{
     margin-top:60px;
     border-radius:30px;
@@ -240,8 +223,6 @@ iframe{
     height:480px;
     border:none;
 }
-
-
 
 .about-box{
     background:linear-gradient(to right,#eef6ff,#e3efff);
@@ -259,9 +240,6 @@ iframe{
     box-shadow:0 0 40px rgba(79,140,255,0.35);
 }
 
-
-
-
 footer{
     text-align:center;
     padding:60px;
@@ -272,136 +250,59 @@ footer{
     box-shadow:0 -8px 25px rgba(79,140,255,0.15);
 }
 
-
-
-@media(max-width:900px){
-    .magazine-name{
-    font-family:'Playfair Display',serif;
-    font-size:55px;
-    text-align:center;
-    letter-spacing:4px;
+.menu-toggle{
+    display:none;
+    position:fixed;
+    top:20px;
+    left:20px;
+    font-size:30px;
+    cursor:pointer;
+    z-index:1100;
     color:#1e3a8a;
-    margin-bottom:15px;
+    background:white;
+    padding:8px 14px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(79,140,255,0.3);
 }
 
-.headline{
-    font-family:'Playfair Display',serif;
-    font-size:44px;
-    text-align:center;
-    color:#355caa;
-    margin-bottom:15px;
-}
-
-.tagline{
-    text-align:center;
-    font-style:italic;
-    font-size:20px;
-    color:#4f8cff;
-    margin-bottom:20px;
-}
-
-.publication-date{
-    text-align:center;
-    font-size:14px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    margin-bottom:40px;
-    color:#6c86b5;
-}
-
-
-.cover-image-box{
-    position:relative;
-    border-radius:35px;
-    overflow:hidden;
-    box-shadow:0 20px 50px rgba(79,140,255,0.35);
-    margin-bottom:50px;
-}
-
-.cover-image-box img{
-    width:100%;
-    display:block;
-}
-
-.cover-overlay{
-    position:absolute;
+.overlay{
+    position:fixed;
     top:0;
     left:0;
     width:100%;
     height:100%;
-    background:linear-gradient(to top, rgba(0,0,0,0.😎, rgba(0,0,0,0.2));
-    display:flex;
-    align-items:flex-end;
-    padding:50px;
+    background:rgba(0,0,0,0.4);
     opacity:0;
+    visibility:hidden;
+    z-index:900;
 }
 
-.cover-overlay p{
-    color:white;
-    font-size:20px;
-    line-height:1.6;
-    max-width:700px;
-}
-
-.cover-image-box:hover .cover-overlay{
+.overlay.active{
     opacity:1;
+    visibility:visible;
 }
 
-.cover-image-box:hover img{
-    transform:scale(1.1);
-}
-
-.coverlines{
-    background:white;
-    padding:50px;
-    border-radius:30px;
-    box-shadow:0 15px 40px rgba(79,140,255,0.2);
-    border:1px solid rgba(79,140,255,0.2);
-}
-
-.coverlines h3{
-    font-family:'Playfair Display',serif;
-    margin-bottom:25px;
-    color:#1e3a8a;
-}
-
-.coverlines ul{
-    margin-left:25px;
-}
-
-.coverlines li{
-    margin-bottom:12px;
-    font-size:17px;
-}
+@media(max-width:900px){
 
     body{
         flex-direction:column;
     }
 
     .sidebar{
-        width:100%;
-        height:auto;
-        position:relative;
-        flex-direction:row;
-        justify-content:space-between;
-        align-items:center;
-        padding:20px 6%;
+        left:-100%;
+        transition:0.4s ease;
     }
 
-    .sidebar nav{
-        flex-direction:row;
+    .sidebar.active{
+        left:0;
     }
 
-    .sidebar nav a{
-        margin:0 8px;
+    .menu-toggle{
+        display:block;
     }
 
     .main-content{
         margin-left:0;
-    }
-
-    .hero h1{
-        font-size:36px;
     }
 
     iframe{
